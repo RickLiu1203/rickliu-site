@@ -12,6 +12,7 @@ import { use, useEffect, useState } from "react";
 interface Recipe {
   number?: string;
   title: string;
+  icon?: string;
   intro: string;
   mediaUrl?: string;
   mediaType?: "video" | "image" | "gif" | "boomerang";
@@ -68,6 +69,42 @@ export default function RecipePage({
     loadRecipe();
   }, [name]);
 
+  useEffect(() => {
+    if (!recipe) return;
+
+    // Update document title
+    document.title = recipe.title;
+
+    // Update favicon with emoji
+    if (recipe.icon) {
+      const canvas = document.createElement("canvas");
+      canvas.width = 64;
+      canvas.height = 64;
+      const ctx = canvas.getContext("2d");
+      if (ctx) {
+        ctx.font = "48px serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(recipe.icon, 32, 32);
+
+        const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+        if (favicon) {
+          favicon.href = canvas.toDataURL();
+        } else {
+          const newFavicon = document.createElement("link");
+          newFavicon.rel = "icon";
+          newFavicon.href = canvas.toDataURL();
+          document.head.appendChild(newFavicon);
+        }
+      }
+    }
+
+    // Cleanup - restore default title on unmount
+    return () => {
+      document.title = "Rick's Recipes";
+    };
+  }, [recipe]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -100,13 +137,16 @@ export default function RecipePage({
         <div className="flex flex-col gap-2">
           {/* Title and Intro */}
           <div className="flex flex-col gap-2 mb-6 sm:mb-8">
-            <h1 className="flex text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col">
+            <h1 className="flex items-center text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col">
               {recipe.number && (
                 <span className="text-gray-300 mr-2 sm:mr-4">
                   {recipe.number}
                 </span>
               )}
               {scrambledTitle}
+              {recipe.icon && (
+                <span className="ml-3 sm:ml-4">{recipe.icon}</span>
+              )}
             </h1>
             <p className="text-sm sm:text-base font-mono text-muted-foreground leading-relaxed max-w-3xl">
               {recipe.intro}
