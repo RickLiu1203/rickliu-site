@@ -36,9 +36,9 @@ export function RecipeMeta({
             {totalMinutes} min{waitTime && "*"}
           </div>
           <div className="text-xs sm:text-sm font-mono text-muted-foreground space-y-0.5">
-            <div>prep - {prepTime}</div>
-            <div>cook - {cookTime}</div>
-            {waitTime && <div>wait - {waitTime}*</div>}
+            <div>Prep - {prepTime}</div>
+            <div>Cook - {cookTime}</div>
+            {waitTime && <div>Wait - {waitTime}*</div>}
           </div>
         </div>
       </div>
