@@ -17,20 +17,20 @@ export function InstructionStep({
   info,
 }: InstructionStepProps) {
   return (
-    <div className="flex gap-3 sm:gap-4">
+    <div className="flex gap-4">
       <div className="flex-shrink-0">
-        <div className="w-8 h-8 rounded-full border border-foreground flex items-center justify-center font-mono font-bold text-sm">
+        <div className="sm:w-8 sm:h-8 w-6 h-6 rounded-full border border-foreground flex items-center justify-center font-mono font-bold text-xs sm:text-sm">
           {stepNumber}
         </div>
       </div>
       <div className="flex-1 pt-1">
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <div className="w-full">
-            <p className="font-mono text-sm leading-relaxed mb-3">
+            <p className="font-mono text-sm leading-relaxed mb-4">
               {description}
             </p>
             {imageUrl && (
-              <div className="sm:hidden mb-3">
+              <div className="sm:hidden mb-4">
                 <img
                   src={imageUrl}
                   alt={`Step ${stepNumber}`}

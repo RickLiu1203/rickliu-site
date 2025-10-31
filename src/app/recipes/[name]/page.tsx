@@ -96,11 +96,11 @@ export default function RecipePage({
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
+      <main className="max-w-4xl mx-auto px-6 sm:px-8 py-8 sm:py-12">
         <div>
           {/* Title and Intro */}
-          <div className="mb-6 sm:mb-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight mb-3 sm:mb-4">
+          <div className="flex flex-col gap-2 mb-6 sm:mb-8">
+            <h1 className="flex text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col">
               {recipe.number && (
                 <span className="text-gray-300 mr-2 sm:mr-4">
                   {recipe.number}
