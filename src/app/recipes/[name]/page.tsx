@@ -8,6 +8,8 @@ import { RecipeInstructions } from "@/components/recipe/RecipeInstructions";
 import { BoomerangVideo } from "@/components/recipe/BoomerangVideo";
 import { useScrambleText } from "@/hooks/useScrambleText";
 import { use, useEffect, useState } from "react";
+import Link from "next/link";
+import { ArrowUp } from "lucide-react";
 
 interface Recipe {
   number?: string;
@@ -45,6 +47,7 @@ export default function RecipePage({
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const { displayText: scrambledTitle } = useScrambleText(
     recipe?.title || "",
     800
@@ -107,6 +110,19 @@ export default function RecipePage({
     };
   }, [recipe]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -130,16 +146,22 @@ export default function RecipePage({
   return (
     <div className="min-h-screen bg-background">
       <header>
-        <div className="max-w-4xl mx-auto px-4 sm:px-8 py-4 sm:py-6 flex justify-end">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10 py-8 sm:py-12 flex justify-between items-center">
+          <Link
+            href="/recipes"
+            className="font-mono text-base text-foreground relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-150 hover:after:w-full"
+          >
+            &lt; all recipes
+          </Link>
           <ThemeToggle />
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 sm:px-8 py-8 sm:py-12">
+      <main className="max-w-5xl mx-auto px-6 sm:px-10 sm:pt-4 pb-32">
         <div className="flex flex-col gap-2">
           {/* Title and Intro */}
           <div className="flex flex-col gap-2 mb-6 sm:mb-8">
-            <h1 className="flex md:gap-2 text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col items-start">
+            <h1 className="flex gap-2 text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col items-start">
               {recipe.number && (
                 <span className="text-gray-300 mr-2 sm:mr-4">
                   {recipe.number}
@@ -152,7 +174,7 @@ export default function RecipePage({
                 )}
               </div>
             </h1>
-            <p className="text-sm sm:text-base font-mono text-muted-foreground leading-relaxed max-w-3xl">
+            <p className="text-base sm:text-lg font-mono text-muted-foreground leading-relaxed">
               {recipe.intro}
             </p>
           </div>
@@ -220,6 +242,17 @@ export default function RecipePage({
           </div>
         </div>
       </main>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 translate-y-0 h-13 w-11 rounded-full bg-foreground text-background flex items-center justify-center shadow-lg hover:-translate-x-1/2 hover:-translate-y-1 transition-all duration-1000 active:scale-90"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      )}
     </div>
   );
 }

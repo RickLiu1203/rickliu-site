@@ -5,3 +5,4 @@ export { InstructionStep } from "./InstructionStep";
 export { InfoBox } from "./InfoBox";
 export { TipBox } from "./TipBox";
 export { BoomerangVideo } from "./BoomerangVideo";
+export { RecipeCard } from "./RecipeCard";
