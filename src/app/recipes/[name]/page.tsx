@@ -87,7 +87,9 @@ export default function RecipePage({
         ctx.textBaseline = "middle";
         ctx.fillText(recipe.icon, 32, 32);
 
-        const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
+        const favicon = document.querySelector(
+          "link[rel='icon']"
+        ) as HTMLLinkElement;
         if (favicon) {
           favicon.href = canvas.toDataURL();
         } else {
@@ -137,16 +139,18 @@ export default function RecipePage({
         <div className="flex flex-col gap-2">
           {/* Title and Intro */}
           <div className="flex flex-col gap-2 mb-6 sm:mb-8">
-            <h1 className="flex items-center text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col">
+            <h1 className="flex md:gap-2 text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col items-start">
               {recipe.number && (
                 <span className="text-gray-300 mr-2 sm:mr-4">
                   {recipe.number}
                 </span>
               )}
-              {scrambledTitle}
-              {recipe.icon && (
-                <span className="ml-3 sm:ml-4">{recipe.icon}</span>
-              )}
+              <div className="flex flex-row gap-2">
+                {scrambledTitle}
+                {recipe.icon && (
+                  <span className="ml-3 sm:ml-4">{recipe.icon}</span>
+                )}
+              </div>
             </h1>
             <p className="text-sm sm:text-base font-mono text-muted-foreground leading-relaxed max-w-3xl">
               {recipe.intro}
