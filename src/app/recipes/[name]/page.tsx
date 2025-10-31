@@ -97,7 +97,7 @@ export default function RecipePage({
       </header>
 
       <main className="max-w-4xl mx-auto px-6 sm:px-8 py-8 sm:py-12">
-        <div>
+        <div className="flex flex-col gap-2">
           {/* Title and Intro */}
           <div className="flex flex-col gap-2 mb-6 sm:mb-8">
             <h1 className="flex text-2xl sm:text-4xl md:text-5xl font-mono font-bold tracking-tight sm:mb-4 sm:flex-row flex-col">
@@ -155,7 +155,7 @@ export default function RecipePage({
           />
 
           {/* Two Column Layout for Ingredients & Tools */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-8 mb-8 sm:mb-12">
             <RecipeList
               title="Ingredients"
               items={recipe.ingredients}
@@ -171,7 +171,9 @@ export default function RecipePage({
           </div>
 
           {/* Instructions */}
-          <RecipeInstructions steps={recipe.steps} />
+          <div className="mt-4">
+            <RecipeInstructions steps={recipe.steps} />
+          </div>
         </div>
       </main>
     </div>
