@@ -17,7 +17,10 @@ export function RecipeList({ title, items, info, tip }: RecipeListProps) {
       {info && <InfoBox content={info} />}
       <div className="space-y-2 sm:space-y-3 mb-4">
         {items.map((item, index) => (
-          <div key={index} className="flex items-start gap-2 sm:gap-3 font-mono text-xs sm:text-sm">
+          <div
+            key={index}
+            className="flex items-start gap-2 sm:gap-3 font-mono text-sm"
+          >
             <div className="w-1.5 h-1.5 rounded-full bg-foreground mt-1.5 sm:mt-2 flex-shrink-0" />
             <span className="leading-relaxed">{item}</span>
           </div>
