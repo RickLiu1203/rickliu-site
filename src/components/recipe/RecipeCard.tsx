@@ -33,8 +33,8 @@ export function RecipeCard({
             <Image
               src={thumbnail}
               alt={title}
-              width={200}
-              height={200}
+              width={800}
+              height={800}
               className="w-full h-full object-cover transition-transform duration-300"
             />
           </div>
