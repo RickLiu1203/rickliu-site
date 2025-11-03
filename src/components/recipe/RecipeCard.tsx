@@ -26,8 +26,8 @@ export function RecipeCard({
   servings,
 }: RecipeCardProps) {
   return (
-    <Link href={`/recipes/${slug}`} className="block group">
-      <Card className="overflow-hidden cursor-pointer hover:border-foreground transition-all duration-200 active:scale-[0.98]">
+    <Link href={`/recipes/${slug}`} className="block group h-full">
+      <Card className="overflow-hidden cursor-pointer hover:border-foreground transition-all duration-200 active:scale-[0.98] h-full flex flex-col">
         {thumbnail && (
           <div className="aspect-4/3 w-full overflow-hidden bg-muted">
             <Image
@@ -39,7 +39,7 @@ export function RecipeCard({
             />
           </div>
         )}
-        <div className="flex flex-col gap-2 p-4 sm:p-6 transition-colors duration-200 group-hover:bg-foreground group-hover:text-background">
+        <div className="flex flex-col gap-2 p-4 sm:p-6 transition-colors duration-200 group-hover:bg-foreground group-hover:text-background flex-1">
           <div className="flex flex-col items-start mb-2">
             {number && (
               <span className="text-base sm:text-lg font-mono font-bold text-gray-300 group-hover:text-gray-500">
@@ -51,13 +51,13 @@ export function RecipeCard({
               <span className="ms-3">{icon}</span>
             </h3>
           </div>
-          <div className="flex flex-col gap-2 text-sm font-mono text-muted-foreground group-hover:text-background/70">
+          <div className="flex flex-col gap-2 text-sm font-mono text-muted-foreground group-hover:text-background/70 mb-4">
             {prepTime && <span>Prep - {prepTime}</span>}
             {cookTime && <span>Cook - {cookTime}</span>}
             {waitTime && <span>Wait - {waitTime}</span>}
-            <div className="font-bold text-foreground group-hover:text-background mt-3">
-              {servings && <span>{servings}</span>}
-            </div>
+          </div>
+          <div className="font-bold text-foreground group-hover:text-background mt-auto">
+            {servings && <span>{servings}</span>}
           </div>
         </div>
       </Card>

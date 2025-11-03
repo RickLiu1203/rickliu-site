@@ -1,0 +1,76 @@
+{
+  "number": "002",
+  "title": "Choco Chunk & Walnut Cookies",
+  "icon": "🍪",
+  "intro": "my mom said these are the best cookies she's ever had (totally not biased) 👩️ recipe is again my own but inspired by Nick Digiovanni's choco chip cookie and Benjamin the Baker's thick and gooey choco chip cookies 😋",
+  "mediaUrl": "/assets/recipes/choco-chunk-walnut-cookies/demo.webm",
+  "mediaType": "boomerang",
+  "mediaYOffset": "50%",
+  "prepTime": "60 min",
+  "cookTime": "15 min",
+  "waitTime": "24 to 36 hrs",
+  "servings": "12 Cookies",
+  "subtitle": "450-500 cal per cookie",
+  "ingredients": [
+    "2 1/2 sticks (284g) unsalted butter, softened",
+    "125g granulated sugar",
+    "175g brown sugar",
+    "2 large eggs",
+    "2 teaspoons vanilla extract",
+    "2 cups (280g) all-purpose flour",
+    "1 cup (140g) bread flour",
+    "1/2 teaspoon baking soda",
+    "1 teaspoon baking powder",
+    "1 tablespoon table salt",
+    "2 tablespoons toasted milk powder",
+    "chocolate chips*",
+    "baker's chocolate*",
+    "walnuts*"
+  ],
+  "ingredientsTip": "There are lots of tutorials online on how to toast milk powder! This is an optional ingredient but I promise it's 100% worth it!",
+  "ingredientsInfo": "Mix-ins are marked with (*). These are honestly up to your discretion but I would keep the total mix-ins around 25-30% of your dough's volume",
+  "tools": [
+    "stand mixer or hand mixer",
+    "large mixing bowl",
+    "kitchen scale",
+    "baking sheets",
+    "parchment paper or silicone baking mats",
+    "use your common sense!"
+  ],
+  "toolsTip": "A stand mixer will make your life so much easier for the creaming process. also PLEASE use a scale!",
+  "steps": [
+    {
+      "description": "Start with your dry ingredients! mix the all-purpose flour, bread flour, baking powder, baking soda, and salt together in a large bowl",
+      "tip": "I recommend using a whisk to mix and also sifting the flour but honestly not mandatory if you're lazy"
+    },
+    {
+      "description": "Chop up your desired amount of baker's chocolate and walnuts into small pieces, then combine them in a separate bowl with your chocolate chips",
+      "tip": "The more mix-ins you add, the less your dough will spread, leading to a thicker cookie."
+    },
+    {
+      "description": "In another large bowl, with either the stand mixer or a hand mixer, cream together the softened butter, granulated sugar, brown sugar, and toasted milk powder until light and fluffy (about 7-9 minutes on medium speed). The final creamed mixture should have increased 2 to 2.5x in volume",
+      "info": "Be sure to scrape the sides of the bowl periodically to ensure an even mix!"
+    },
+    {
+      "description": "Add in each egg one by one on medium speed. Be sure that the first egg is fully mixed in before adding the second. Also add in the vanilla extract alongside the first egg"
+    },
+    {
+      "description": "Add in your dry ingredients on low speed and mix until no flour streaks are visible. Afterwards add the mix-ins and mix on low speed",
+      "info": "Be sure to not overmix and remember to periodically scrape the sides to ensure an even mix!",
+      "tip": "Add a towel on top of your stand mixer when first mixing your dry ingredients to prevent the flour from getting everywhere"
+    },
+    {
+      "description": "Scoop the dough using a cookie scoop (or just your hands lol). Be sure that each scoop weighs 110 grams and wrap a normal-sized marshmallow (or a bunch of small ones squished together) into the center of the dough and form a ball. Place the dough balls on parchment paper and set in the fridge for at least 24 hours",
+      "tip": "I actually like using my hands cause the uneven edges crisp up nicely when baked but up to personal preference",
+      "info": "If you're impatient, you can bake it even after 1 hr in the fridge. But TRUST me, you want to wait the 24 hours to let the flour develop there is a massive difference"
+    },
+    {
+      "description": "Preheat your oven to 360°F. Place your cookies on a baking sheet with parchment paper and bake your cookies for 10 mins (or until you see the dough spreading significantly and the bottom is starting to brown a bit). Then lift and drop your baking sheet twice on the oven rack and finish baking for another 2-3 minutes (or until the bottom is a nice golden brown/brown)",
+      "info": "The pan-banging (lifting and dropping) creates better texture and appearance by deflating the cookies. This is not mandatory but its such an easy step to elevate your end result"
+    },
+    {
+      "description": "Remove from oven and let the cookies set, enjoy!",
+      "info": "The cookies should come out really soft/gooey to the touch. This is normal as the sugars and butter are still melted so don't worry, they will solidify nicely once cooled!"
+    }
+  ]
+}

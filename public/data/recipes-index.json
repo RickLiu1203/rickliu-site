@@ -1,10 +1,21 @@
 [
   {
     "slug": "smores-cookies",
-    "number": "01",
+    "number": "001",
     "title": "S'mores Cookies",
     "icon": "🍪",
     "thumbnail": "/assets/recipes/smores-cookies/thumbnail.webp",
+    "prepTime": "60 min",
+    "cookTime": "15 min",
+    "waitTime": "24 to 36 hrs",
+    "servings": "12 Cookies"
+  },
+  {
+    "slug": "choco-chunk-walnut-cookies",
+    "number": "002",
+    "title": "Choco Chunk & Walnut Cookies",
+    "icon": "🍪",
+    "thumbnail": "/assets/recipes/choco-chunk-walnut-cookies/thumbnail.webp",
     "prepTime": "60 min",
     "cookTime": "15 min",
     "waitTime": "24 to 36 hrs",
