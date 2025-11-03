@@ -56,7 +56,7 @@ export function RecipeCard({
             {cookTime && <span>Cook - {cookTime}</span>}
             {waitTime && <span>Wait - {waitTime}</span>}
           </div>
-          <div className="font-bold text-foreground group-hover:text-background mt-auto">
+          <div className="font-bold text-foreground group-hover:text-background mt-auto font-mono">
             {servings && <span>{servings}</span>}
           </div>
         </div>
